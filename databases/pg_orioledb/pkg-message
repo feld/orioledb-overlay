@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+ To activate the extension you must append it to the shared libraries
+ list in your PostgreSQL config file:
+
+ shared_preload_libraries = 'orioledb'
+
+ Activate the extension for the database:
+
+ CREATE EXTENSION orioledb;
+
+ Then to begin using the OrioleDB storage you must create each table with
+ USING orioledb like so:
+ 
+ CREATE TABLE EXAMPLE (...) USING orioledb;
+
+ Alternatively you can put the following in your PostgreSQL config file:
+ 
+ default_table_access_method = 'orioledb'
+
+ or simply set it per database:
+
+ SET default_table_access_method = 'orioledb';
+
+EOM
+}
+]

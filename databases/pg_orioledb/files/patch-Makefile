@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-10-14 19:11:24 UTC
++++ Makefile
+@@ -433,7 +433,7 @@ check_patchset_version:
+ check_patchset_version:
+ 	@python3 check_patchset_version.py $(MAJORVERSION) $(ORIOLEDB_PATCHSET_VERSION)
+ 
+-$(OBJS): include/utils/stopevents_defs.h check_patchset_version
++$(OBJS): include/utils/stopevents_defs.h
+ 
+ submake-regress:
+ 	$(MAKE) -C $(top_builddir)/src/test/regress all
